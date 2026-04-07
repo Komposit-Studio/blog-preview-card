@@ -49,11 +49,47 @@ body {
 
 main {
   min-height: 100vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns:
+    [main-start] 1fr
+    [content-start] repeat(4, 4.5rem)
+    [card-start] repeat(4, 4.5rem)
+    [card-end] repeat(4, 4.5rem)
+    [content-end] 1fr [main-end];
+  gap: 2rem;
+  align-items: center;
 }
 
 .card {
+  grid-column-start: card-start;
+  grid-column-end: card-end;
+
+  background-color: var(--color-white);
+  padding: var(--spacing-300);
+  border-radius: 1.25rem;
+  box-shadow: var(--spacing-100) var(--spacing-100) #000;
+
   header {
     height: 12.5rem;
     background-image: url("./assets/images/illustration-article.svg");
+    border-radius: 0.625rem;
+  }
+
+  section {
+    margin-block: var(--spacing-300);
+  }
+
+  .tag {
+    background-color: var(--color-yellow);
+    width: fit-content;
+    height: fit-content;
+    padding: var(--spacing-50) var(--spacing-150);
+    border-radius: var(--spacing-50);
+
+    color: var(--color-gray-950);
+    line-height: var(--line-height);
+    font-size: var(--font-size-small);
+    font-weight: bold;
   }
 }
